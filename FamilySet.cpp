@@ -180,9 +180,10 @@ void FamilySet::resetFamilyIter()
 bool FamilySet::hasNext() {
 	// Returns true as long as there is another family to return
 	unordered_map<string, vector<string>>::iterator temp = family_iterator;
-	++temp;
+
 	if (temp == dictionaries.end()) {
 		return false;
+		
 	}
 	return true;
 }
