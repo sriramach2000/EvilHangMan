@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include <fstream>
+#include <algorithm>
 using namespace std;
 
 class FamilySet
@@ -55,15 +56,18 @@ public:
 	void resetFamilyIter();
 	bool hasNext();
 	string getNextFamily();
+	
 
 private:
-	vector<string> masterList;
 	// This stores all words currently "valid"
-
+	vector<string> masterList;
+	
+	mutable typename unordered_map<string, vector<string>>::iterator family_iterator;
+	
 	unordered_map<string, vector<string>> dictionaries;
 	// Stores a dictionary for each family. Each word from
 	// the masterList is contained within one of these
 	// these vector dictionaries.
-	unordered_map<string, vector<string>>::iterator family_iterator;
+	
 	int iterCount;	// Used for iterator
 };
