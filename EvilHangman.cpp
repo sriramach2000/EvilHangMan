@@ -1,4 +1,8 @@
 
+/*
+Author: Sriram Acharya
+Class: CS 301
+*/
 #include <string>
 #include <iostream>
 
